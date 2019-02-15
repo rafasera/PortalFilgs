@@ -23,7 +23,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final String JSON_URL = "https://egpersonaltrainner.000webhostapp.com/feed/json";
+    private final String JSON_URL = "https://egpersonaltrainner.000webhostapp.com/wp-json/wp/v2/posts";
 
     private JsonArrayRequest request;
     private RequestQueue requestQueue;
@@ -55,9 +55,11 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         jsonObject = response.getJSONObject(i);
                         Anime anime = new Anime();
-                        anime.setTitle(jsonObject.getString("title"));
+                        //anime.setTitle(jsonObject.getString("title"));
+                        anime.setTitle(jsonObject.getJSONObject("title").getString("rendered"));
+                        // feitas alterações para obter o objeto
                         //anime.setDescription(jsonObject.getString("description"));
-                        anime.setExcerpt(jsonObject.getString("version"));
+                        //anime.setExcerpt(jsonObject.getString("version"));
                         //anime.setStudio(jsonObject.getString("studio"));
                         //anime.setRating(jsonObject.getString("Rating"));
                         //anime.setNb_episode(jsonObject.getInt("episode"));

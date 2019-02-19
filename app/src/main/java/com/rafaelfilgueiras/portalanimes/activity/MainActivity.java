@@ -1,3 +1,6 @@
+// update em 18/02/2018 as 21:20
+
+
 package com.rafaelfilgueiras.portalanimes.activity;
 
 import android.support.v7.app.AppCompatActivity;
@@ -52,11 +55,15 @@ public class MainActivity extends AppCompatActivity {
 
                 for (int i = 0; i < response.length(); i++) {
 
+                    String ExcerptText;
+
                     try {
                         jsonObject = response.getJSONObject(i);
                         Anime anime = new Anime();
                         //anime.setTitle(jsonObject.getString("title"));
                         anime.setTitle(jsonObject.getJSONObject("title").getString("rendered"));
+                        anime.setTitle(jsonObject.getJSONObject("content").getString("rendered"));
+
                         // feitas alterações para obter o objeto
                         //anime.setDescription(jsonObject.getString("description"));
                         //anime.setExcerpt(jsonObject.getString("version"));

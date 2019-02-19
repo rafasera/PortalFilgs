@@ -35,7 +35,8 @@ public class Anime {
         this.content = content;
     }
 
-    public void setExcerpt(String excerpt) {
+    public String setExcerpt(String excerpt) {
         this.excerpt = excerpt;
+        return excerpt;
     }
 }

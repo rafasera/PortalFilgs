@@ -48,7 +48,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         myViewHolder.txtName.setText(mData.get(i).getTitle());
         myViewHolder.txtStudio.setText(mData.get(i).getExcerpt());
-        //myViewHolder.txtRating.setText(mData.get(i).getRating());
+        myViewHolder.txtRating.setText(mData.get(i).getRating());
         //myViewHolder.txtCategory.setText(mData.get(i).getCategorie());
 
         // Carregar a imagem da internet dentro do imageview
@@ -65,7 +65,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public  static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView txtName;
-        //TextView txtRating;
+        TextView txtRating;
         TextView txtStudio;
         //TextView txtCategory;
         //ImageView imgThumbnail;
@@ -76,7 +76,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             txtName = itemView.findViewById(R.id.anime_name);
             //txtCategory = itemView.findViewById(R.id.categoria);
-            //txtRating = itemView.findViewById(R.id.rating);
+            txtRating = itemView.findViewById(R.id.rating);
             txtStudio = itemView.findViewById(R.id.studio);
             //imgThumbnail = itemView.findViewById(R.id.thumbnail);
 

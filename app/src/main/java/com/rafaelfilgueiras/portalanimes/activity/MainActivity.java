@@ -62,8 +62,13 @@ public class MainActivity extends AppCompatActivity {
                         Anime anime = new Anime();
                         //anime.setTitle(jsonObject.getString("title"));
                         anime.setTitle(jsonObject.getJSONObject("title").getString("rendered"));
-                        anime.setTitle(jsonObject.getJSONObject("content").getString("rendered"));
-
+                        anime.setExcerpt(jsonObject.getJSONObject("excerpt").getString("rendered")
+                                .replace("<p>", "")
+                                .replace("</p>", ""));
+                        anime.setRating(jsonObject.getString("date")
+                                .substring(0, 16)
+                                .replace("T", " ")
+                                .replace("-", "/"));
                         // feitas alterações para obter o objeto
                         //anime.setDescription(jsonObject.getString("description"));
                         //anime.setExcerpt(jsonObject.getString("version"));

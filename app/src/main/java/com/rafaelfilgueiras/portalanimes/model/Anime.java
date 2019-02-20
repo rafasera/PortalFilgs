@@ -5,14 +5,16 @@ public class Anime {
     private String title;
     private String content;
     private String excerpt;
+    private String rating;
 
     public Anime() {
     }
 
-    public Anime(String title, String content, String excerpt) {
+    public Anime(String title, String content, String excerpt, String rating) {
         this.title = title;
         this.content = content;
         this.excerpt = excerpt;
+        this.rating = rating;
     }
 
     public String getTitle() {
@@ -27,12 +29,20 @@ public class Anime {
         return excerpt;
     }
 
+    public String getRating() {
+        return rating;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
     }
 
     public String setExcerpt(String excerpt) {

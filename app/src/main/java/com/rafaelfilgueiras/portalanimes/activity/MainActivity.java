@@ -1,4 +1,4 @@
-// update em 18/02/2018 as 21:20
+// update em 19/02/2018 as 22:48
 
 
 package com.rafaelfilgueiras.portalanimes.activity;
@@ -26,7 +26,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final String JSON_URL = "https://egpersonaltrainner.000webhostapp.com/wp-json/wp/v2/posts";
+    private final String JSON_URL = "http://filgs.com.br/wp-json/wp/v2/posts";
 
     private JsonArrayRequest request;
     private RequestQueue requestQueue;
@@ -69,8 +69,9 @@ public class MainActivity extends AppCompatActivity {
                                 .substring(0, 16)
                                 .replace("T", " ")
                                 .replace("-", "/"));
+                        anime.setContent(jsonObject.getJSONObject("content").getString("rendered"));
                         // feitas alterações para obter o objeto
-                        //anime.setDescription(jsonObject.getString("description"));
+                        // Alteracoes para receber dados da descricao - IMPORTANTE esse campo deve ir para nova activity
                         //anime.setExcerpt(jsonObject.getString("version"));
                         //anime.setStudio(jsonObject.getString("studio"));
                         //anime.setRating(jsonObject.getString("Rating"));

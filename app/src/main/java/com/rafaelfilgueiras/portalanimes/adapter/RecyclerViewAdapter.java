@@ -1,22 +1,25 @@
 package com.rafaelfilgueiras.portalanimes.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.rafaelfilgueiras.portalanimes.R;
+import com.rafaelfilgueiras.portalanimes.activity.PostActivity;
 import com.rafaelfilgueiras.portalanimes.model.Anime;
 
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>{
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
     private Context mContext;
     private List<Anime> mData;
@@ -38,9 +41,27 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         View view;
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        view = inflater.inflate(R.layout.anime_row_item, viewGroup,false);
+        view = inflater.inflate(R.layout.anime_row_item, viewGroup, false);
+        final MyViewHolder viewHolder = new MyViewHolder(view);
 
-        return new MyViewHolder(view);
+        // definindo clique para o container do LynearLayout
+        viewHolder.view_container.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent postIntent = new Intent(mContext, PostActivity.class);
+                postIntent.putExtra("post_name", mData.get(viewHolder.getAdapterPosition()).getTitle()); // nome da postagem
+                postIntent.putExtra("post_data", mData.get(viewHolder.getAdapterPosition()).getRating()); // data da postagem
+                postIntent.putExtra("post_Content", mData.get(viewHolder.getAdapterPosition()).getContent()); // conteudo do post
+                //postIntent.putExtra("post_name", mData.get(viewHolder.getAdapterPosition()).getTitle());
+
+                mContext.startActivity(postIntent);
+
+            }
+        });
+
+
+        return viewHolder;
     }
 
     @Override
@@ -62,27 +83,27 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return mData.size();
     }
 
-    public  static class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtName;
         TextView txtRating;
         TextView txtStudio;
         //TextView txtCategory;
         //ImageView imgThumbnail;
+        LinearLayout view_container;
 
 
-        public MyViewHolder(View itemView){
+        public MyViewHolder(View itemView) {
             super(itemView);
 
-            txtName = itemView.findViewById(R.id.anime_name);
+            view_container = itemView.findViewById(R.id.container);
+            txtName = itemView.findViewById(R.id.post_name);
             //txtCategory = itemView.findViewById(R.id.categoria);
-            txtRating = itemView.findViewById(R.id.rating);
-            txtStudio = itemView.findViewById(R.id.studio);
+            txtRating = itemView.findViewById(R.id.tv_data);
+            txtStudio = itemView.findViewById(R.id.tv_mid_description);
             //imgThumbnail = itemView.findViewById(R.id.thumbnail);
 
         }
-
-
 
 
     }

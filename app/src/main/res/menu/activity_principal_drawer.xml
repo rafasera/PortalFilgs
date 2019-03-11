@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_postagens"
+            android:icon="@drawable/ic_postagens_black_24dp"
+            android:title="Postagens Recentes" />
+        <item
+            android:id="@+id/nav_curriculo"
+            android:icon="@drawable/ic_curriculo_black_24dp"
+            android:title="Curriculo" />
+        <item
+            android:id="@+id/nav_projetos"
+            android:icon="@drawable/ic_projetos_black_24dp"
+            android:title="Projetos" />
+        <item
+            android:id="@+id/nav_sobre"
+            android:icon="@drawable/ic_sobre_black_24dp"
+            android:title="Sobre" />
+       <!-- <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Tools" /> -->
+    </group>
+
+    <item android:title="Ações">
+        <menu>
+           <!-- <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" /> -->
+            <item
+                android:id="@+id/nav_sair"
+                android:icon="@drawable/ic_sair_black_24dp"
+                android:title="Sair" />
+        </menu>
+    </item>
+
+</menu>

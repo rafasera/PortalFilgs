@@ -1,59 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="220dp"
     android:layout_marginTop="5dp"
-    android:background="#fff"
+    android:background="@color/background_transp_branco"
     android:orientation="horizontal"
     android:padding="8dp">
-
-    <ImageView
-        android:id="@+id/thumbnail"
-        android:layout_width="100dp"
-        android:layout_height="match_parent"
-        android:background="@drawable/loading_shape" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_margin="8dp"
+        android:layout_margin="5dp"
         android:orientation="vertical">
 
 
         <TextView
-            android:id="@+id/anime_name"
+            android:id="@+id/post_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Anime Titulo"
+            android:text="Post Titulo"
+            android:textAlignment="center"
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/categoria"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Categoria" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/puplicacao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingRight="5dp"
+                android:text="Data de Publicação: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_data"
+                android:layout_width="162dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rating_background"
+                android:drawableLeft="@drawable/ic_date_range_black_24dp"
+                android:padding="5dp"
+                android:text="2019/02/22 18:00"
+                android:textColor="#fff"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
 
         <TextView
-            android:id="@+id/rating"
-            android:layout_width="162dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rating_background"
-            android:drawableLeft="@drawable/ic_star_black_24dp"
-            android:padding="5dp"
-            android:text="0.0"
-            android:textColor="#fff"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/studio"
+            android:id="@+id/tv_mid_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Studio" />
+            android:text="Pequena descricao" />
 
 
     </LinearLayout>

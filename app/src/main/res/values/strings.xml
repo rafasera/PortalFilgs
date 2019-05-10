@@ -13,9 +13,7 @@
     <string name="sobreAutor">Sobre o Desenvolvedor</string>
     <string name="curriculo">Experiência Profissional</string>
     <string name="projetos">Projetos Realizados</string>
-    <!-- <string name="default_web_client_id">713700071045-5tijbq8tdengtuirfb0uqsv8vr792tkc.apps.googleusercontent.com</string> -->
-
-    <!-- Aqui vou colocar no primeiro momento o curriculo, projetos e o sobre em HTML para ser carregado em WEB view melhorando a experiencia na visualização. -->
+    <string name="default_client_id">713700071045-5tijbq8tdengtuirfb0uqsv8vr792tkc.apps.googleusercontent.com</string>
 
 
 </resources>

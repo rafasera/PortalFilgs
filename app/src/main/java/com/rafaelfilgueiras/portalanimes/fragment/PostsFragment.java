@@ -97,7 +97,15 @@ public class PostsFragment extends Fragment {
                                 .substring(0, 16)
                                 .replace("T", " ")
                                 .replace("-", "/"));
-                        anime.setContent(jsonObject.getJSONObject("content").getString("rendered"));
+                        anime.setContent(jsonObject.getJSONObject("content").getString("rendered")
+                                .replace("\t", "")
+                                .replace("\n", "")
+                                //.replace("attachment-large size-large", "attachment-zerif_project_photo size-zerif_project_photo")
+                                .replace("attachment-large", "attachment-zerif_project_photo")
+                                .replace("size-large", "size-zerif_project_photo")
+                        );
+
+
                         // feitas alterações para obter o objeto
                         // Alteracoes para receber dados da descricao - IMPORTANTE esse campo deve ir para nova activity
                         //anime.setExcerpt(jsonObject.getString("version"));

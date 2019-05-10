@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "713700071045",
+    "firebase_url": "https://portalfilgs.firebaseio.com",
+    "project_id": "portalfilgs",
+    "storage_bucket": "portalfilgs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:713700071045:android:116e2987f7571cd6",
+        "android_client_info": {
+          "package_name": "com.rafaelfilgueiras.portalanimes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "713700071045-uernrim8fbv669qseuts9qr0stk3pit8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rafaelfilgueiras.portalanimes",
+            "certificate_hash": "201d7b8f17d97b43a89b3e56dd5c92ab35fc6bae"
+          }
+        },
+        {
+          "client_id": "713700071045-uf3dphpbptkldfiljgupe2r8vl6bg9ih.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rafaelfilgueiras.portalanimes",
+            "certificate_hash": "c9dc451daa166433a0323f241565b95eabc5e30c"
+          }
+        },
+        {
+          "client_id": "713700071045-5tijbq8tdengtuirfb0uqsv8vr792tkc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLSDyJ_lct_IESelHE8o2lYUBPDAnnsRw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "713700071045-5tijbq8tdengtuirfb0uqsv8vr792tkc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

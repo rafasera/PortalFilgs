@@ -69,7 +69,12 @@ public class MainActivity extends AppCompatActivity {
                                 .substring(0, 16)
                                 .replace("T", " ")
                                 .replace("-", "/"));
-                        anime.setContent(jsonObject.getJSONObject("content").getString("rendered"));
+                        anime.setContent(jsonObject.getJSONObject("content").getString("rendered")
+                                .replace("\t", "")
+                                .replace("\n", "")
+                                .replace("attachment-large", "attachment-zerif_project_photo")
+                                .replace("size-large", "size-zerif_project_photo"));
+
                         // feitas alterações para obter o objeto
                         // Alteracoes para receber dados da descricao - IMPORTANTE esse campo deve ir para nova activity
                         //anime.setExcerpt(jsonObject.getString("version"));
@@ -103,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupercycleview(List<Anime> lstAnime) {
 
-        RecyclerViewAdapter myadapter = new RecyclerViewAdapter(this,lstAnime);
+        RecyclerViewAdapter myadapter = new RecyclerViewAdapter(this, lstAnime);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerView.setAdapter(myadapter);

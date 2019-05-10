@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Toast;
 
 // Pertencentes aos importes do google
+
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -24,16 +25,18 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 
+
 import com.rafaelfilgueiras.portalanimes.R;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private static final int RC_SIGN_IN = 234;
+    private static final int RC_SIGN_IN = 0;
     private static final String TAG = "Simples Longin Google: ";
-
-    GoogleSignInClient mGoogleSignInClient;
-
     private FirebaseAuth mAuth;
+
+    public GoogleSignInClient mGoogleSignInClient;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +46,13 @@ public class LoginActivity extends AppCompatActivity {
         // Apenas retirar a barra pois para o modelo não fica legal
         getSupportActionBar().hide();
 
-        mAuth = FirebaseAuth.getInstance();  // ficar atento pois em outros modelos usando API menor tivemos problemas serios por usar o getInstance IMPORTANTE!
+        // ficar atento pois em outros modelos usando API menor tivemos problemas serios por usar o getInstance IMPORTANTE!
 
-        // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
+
 
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
@@ -63,12 +66,26 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        mAuth = FirebaseAuth.getInstance();
+
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+    }
+
 
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
+
+
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -119,6 +136,30 @@ public class LoginActivity extends AppCompatActivity {
                 });
     }
 
+    private void updateUI(FirebaseUser user) {
+        try {
+            //dialog.dismiss();
+        } catch (Exception e) {
+
+        }
+
+        if (user != null) {
+            String str_emailgoogle = user.getEmail();
+            Log.e("Email", str_emailgoogle);
+            //tv_email.setText(str_emailgoogle);
+            //tv_name.setText(user.getDisplayName());
+            //boolean_google=true;
+            //tv_google.setText("Sign out from Google");
+
+            //Glide.with(MainActivity.this).load( user.getPhotoUrl()).into(iv_image);
+
+
+            Log.e("Profile", user.getPhotoUrl() + "");
+
+        } else {
+
+        }
+    }
 
 }
 

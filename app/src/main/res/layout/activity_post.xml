@@ -17,14 +17,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleMarginEnd="64dp"
-            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="26dp"
+            app:expandedTitleMarginStart="26dp"
             app:layout_scrollFlags="exitUntilCollapsed|scroll"
             app:title="Titulo Postagem">
 
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
-                android:layout_height="46dp"
+                android:layout_height="110dp"
                 android:theme="@style/ThemeOverlay.AppCompat.Light"
                 app:layout_collapseMode="pin">
 
@@ -44,13 +44,13 @@
 
                     <TextView
                         android:id="@+id/puplicacao"
-                        android:paddingLeft="25dp"
-                        android:paddingTop="25dp"
-                        android:textColor="#fff"
-                        android:paddingRight="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingLeft="25dp"
+                        android:paddingTop="25dp"
+                        android:paddingRight="5dp"
                         android:text="Data de Publicação: "
+                        android:textColor="#fff"
                         android:textStyle="bold" />
 
 
@@ -95,9 +95,10 @@
 
         <WebView
             android:id="@+id/webView_post"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clickable="false"
+            android:scrollbarAlwaysDrawHorizontalTrack="false"
             android:soundEffectsEnabled="false">
 
 

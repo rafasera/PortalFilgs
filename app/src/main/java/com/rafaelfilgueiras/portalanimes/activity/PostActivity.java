@@ -42,7 +42,9 @@ public class PostActivity extends AppCompatActivity {
         //tv_content.setText(Content);
 
         // string para receber o content antes de passar pra webview (pensar em algo mais descente)
-        String html = Content;
+        String html = Content
+                .replace("attachment-large", "attachment-zerif_project_photo")
+                .replace("size-large", "size-zerif_project_photo");
 
         // setar o valor no webview
         webView_post.loadData(html,null,"utf-8");

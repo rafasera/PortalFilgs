@@ -1,56 +1,25 @@
 package com.rafaelfilgueiras.portalanimes.activity;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
-
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.Volley;
 import com.rafaelfilgueiras.portalanimes.R;
-import com.rafaelfilgueiras.portalanimes.adapter.RecyclerViewAdapter;
 import com.rafaelfilgueiras.portalanimes.fragment.CurriculoFragment;
 import com.rafaelfilgueiras.portalanimes.fragment.PostsFragment;
 import com.rafaelfilgueiras.portalanimes.fragment.ProjetosFragment;
 import com.rafaelfilgueiras.portalanimes.fragment.SobreFragment;
-import com.rafaelfilgueiras.portalanimes.model.Anime;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class PrincipalActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    // declaraveis que chamam as coisas
-    //private final String JSON_URL = "http://filgs.com.br/wp-json/wp/v2/posts";
-
-    //private JsonArrayRequest request;
-    //private RequestQueue requestQueue;
-    //private List<Anime> lstAnime;
-    //private RecyclerView recyclerView;
-    //private FrameLayout frameLayout;
 
 
     @Override
@@ -84,10 +53,6 @@ public class PrincipalActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        // referente ao cardview
-        //lstAnime = new ArrayList<>();
-        //recyclerView = findViewById(R.id.recyclerview);
-        //jsonrequest();
 
         // Inicia o fragmento inicial da aplicacao
         PostsFragment postsFragment = new PostsFragment();
@@ -101,10 +66,13 @@ public class PrincipalActivity extends AppCompatActivity
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        int count = getSupportFragmentManager().getBackStackEntryCount();
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+
         } else {
             super.onBackPressed();
+            getSupportFragmentManager().popBackStack();
         }
     }
 
@@ -142,6 +110,7 @@ public class PrincipalActivity extends AppCompatActivity
             fragmentPostagens();
         } else if (id == R.id.nav_curriculo) {
             // Dessa forma a gente já redireciona para a activity que for necessária.
+            // Modo foi alterado para chamar o fragment
             //Intent mainIntent = new Intent(this, MainActivity.class);
             //this.startActivity(mainIntent);
             fragmentCurriculo();
@@ -166,73 +135,6 @@ public class PrincipalActivity extends AppCompatActivity
     }
 
 
-    // Json RPC
-    /*
-    private void jsonrequest() {
-
-        request = new JsonArrayRequest(JSON_URL, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-
-                JSONObject jsonObject = null;
-
-                for (int i = 0; i < response.length(); i++) {
-
-                    String ExcerptText;
-
-                    try {
-                        jsonObject = response.getJSONObject(i);
-                        Anime anime = new Anime();
-                        //anime.setTitle(jsonObject.getString("title"));
-                        anime.setTitle(jsonObject.getJSONObject("title").getString("rendered"));
-                        anime.setExcerpt(jsonObject.getJSONObject("excerpt").getString("rendered")
-                                .replace("<p>", "")
-                                .replace("</p>", ""));
-                        anime.setRating(jsonObject.getString("date")
-                                .substring(0, 16)
-                                .replace("T", " ")
-                                .replace("-", "/"));
-                        anime.setContent(jsonObject.getJSONObject("content").getString("rendered"));
-                        // feitas alterações para obter o objeto
-                        // Alteracoes para receber dados da descricao - IMPORTANTE esse campo deve ir para nova activity
-                        //anime.setExcerpt(jsonObject.getString("version"));
-                        //anime.setStudio(jsonObject.getString("studio"));
-                        //anime.setRating(jsonObject.getString("Rating"));
-                        //anime.setNb_episode(jsonObject.getInt("episode"));
-                        //anime.setImg_url(jsonObject.getString("img"));
-                        lstAnime.add(anime);
-
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                }
-
-                setupercycleview(lstAnime);
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
-        });
-
-        requestQueue = Volley.newRequestQueue(PrincipalActivity.this);
-        requestQueue.add(request);
-
-    }
-
-    private void setupercycleview(List<Anime> lstAnime) {
-
-        RecyclerViewAdapter myadapter = new RecyclerViewAdapter(this,lstAnime);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        recyclerView.setAdapter(myadapter);
-
-    }
-    */
 
     // usando fragments
     private void fragmentPostagens() {

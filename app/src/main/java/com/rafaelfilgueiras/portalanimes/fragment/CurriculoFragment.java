@@ -38,5 +38,4 @@ public class CurriculoFragment extends Fragment {
 
 
 
-
 }

@@ -3,17 +3,30 @@ package com.rafaelfilgueiras.portalanimes.activity;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.WebView;
 import android.widget.TextView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 
 import com.rafaelfilgueiras.portalanimes.R;
 
 public class PostActivity extends AppCompatActivity {
 
+    private InterstitialAd mInterstitialAd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
+
+        // Inicializa o ADMob
+        MobileAds.initialize(this, "ca-app-pub-7815455063890485~5750229670");
+
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         // Apenas para garantir que a actionbar não vai aparecer.
         getSupportActionBar().hide();
@@ -53,6 +66,29 @@ public class PostActivity extends AppCompatActivity {
         collapsingToolbarLayout.setTitle(name);
 
     }
+/*
+    @Override
+    protected void onStop() {
+        // tentar chamar o admob
+        adMob();
+        super.onStop();
+    } */
+
+    @Override
+    protected void onDestroy() {
+        // tentar chamar o admob
+        adMob();
+        super.onDestroy();
+    }
+
+    public void adMob(){
+        if (mInterstitialAd.isLoaded()){
+            mInterstitialAd.show();
+        } else {
+            Log.d("TAG","O interstitial nao pode ser carregado.");
+        }
+    }
+
 }
 
 

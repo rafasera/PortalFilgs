@@ -3,10 +3,10 @@
 
 package com.rafaelfilgueiras.portalanimes.activity;
 
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -15,7 +15,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.rafaelfilgueiras.portalanimes.R;
 import com.rafaelfilgueiras.portalanimes.adapter.RecyclerViewAdapter;
-import com.rafaelfilgueiras.portalanimes.model.Anime;
+import com.rafaelfilgueiras.portalanimes.model.FilgsAPI;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private JsonArrayRequest request;
     private RequestQueue requestQueue;
-    private List<Anime> lstAnime;
+    private List<FilgsAPI> lstFilgsAPI;
     private RecyclerView recyclerView;
 
 
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lstAnime = new ArrayList<>();
+        lstFilgsAPI = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerview);
         jsonrequest();
 
@@ -59,17 +59,17 @@ public class MainActivity extends AppCompatActivity {
 
                     try {
                         jsonObject = response.getJSONObject(i);
-                        Anime anime = new Anime();
-                        //anime.setTitle(jsonObject.getString("title"));
-                        anime.setTitle(jsonObject.getJSONObject("title").getString("rendered"));
-                        anime.setExcerpt(jsonObject.getJSONObject("excerpt").getString("rendered")
+                        FilgsAPI filgsAPI = new FilgsAPI();
+                        //filgsAPI.setTitle(jsonObject.getString("title"));
+                        filgsAPI.setTitle(jsonObject.getJSONObject("title").getString("rendered"));
+                        filgsAPI.setExcerpt(jsonObject.getJSONObject("excerpt").getString("rendered")
                                 .replace("<p>", "")
                                 .replace("</p>", ""));
-                        anime.setRating(jsonObject.getString("date")
+                        filgsAPI.setRating(jsonObject.getString("date")
                                 .substring(0, 16)
                                 .replace("T", " ")
                                 .replace("-", "/"));
-                        anime.setContent(jsonObject.getJSONObject("content").getString("rendered")
+                        filgsAPI.setContent(jsonObject.getJSONObject("content").getString("rendered")
                                 .replace("\t", "")
                                 .replace("\n", "")
                                 .replace("attachment-large", "attachment-zerif_project_photo")
@@ -77,12 +77,12 @@ public class MainActivity extends AppCompatActivity {
 
                         // feitas alterações para obter o objeto
                         // Alteracoes para receber dados da descricao - IMPORTANTE esse campo deve ir para nova activity
-                        //anime.setExcerpt(jsonObject.getString("version"));
-                        //anime.setStudio(jsonObject.getString("studio"));
-                        //anime.setRating(jsonObject.getString("Rating"));
-                        //anime.setNb_episode(jsonObject.getInt("episode"));
-                        //anime.setImg_url(jsonObject.getString("img"));
-                        lstAnime.add(anime);
+                        //filgsAPI.setExcerpt(jsonObject.getString("version"));
+                        //filgsAPI.setStudio(jsonObject.getString("studio"));
+                        //filgsAPI.setRating(jsonObject.getString("Rating"));
+                        //filgsAPI.setNb_episode(jsonObject.getInt("episode"));
+                        //filgsAPI.setImg_url(jsonObject.getString("img"));
+                        lstFilgsAPI.add(filgsAPI);
 
 
                     } catch (JSONException e) {
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                setupercycleview(lstAnime);
+                setupercycleview(lstFilgsAPI);
 
             }
         }, new Response.ErrorListener() {
@@ -106,9 +106,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setupercycleview(List<Anime> lstAnime) {
+    private void setupercycleview(List<FilgsAPI> lstFilgsAPI) {
 
-        RecyclerViewAdapter myadapter = new RecyclerViewAdapter(this, lstAnime);
+        RecyclerViewAdapter myadapter = new RecyclerViewAdapter(this, lstFilgsAPI);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         recyclerView.setAdapter(myadapter);

@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/colorPrimary"
+            android:background="#272525"
             android:gravity="center_horizontal|top"
             android:paddingTop="70dp"
             android:text="@string/curriculo"

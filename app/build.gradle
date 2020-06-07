@@ -2,23 +2,23 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'keyrafasera'
-            keyPassword 'stk456RFS@'
-            storeFile file('D:/Projetos_android/KEYStrings/certificadoRafasera.jks')
-            storePassword 'stk456RFS$'
-        }
-    }
-    compileSdkVersion 27
+//    signingConfigs {
+//        config {
+//            keyAlias 'keyrafasera'
+//            keyPassword 'stk456RFS@'
+//            storeFile file('D:/Projetos_android/KEYStrings/certificadoRafasera.jks')
+//            storePassword 'stk456RFS$'
+//        }
+//    }
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.rafaelfilgueiras.portalanimes"
         minSdkVersion 22
-        targetSdkVersion 27
-        versionCode 3
-        versionName "1.3"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        signingConfig signingConfigs.config
+        targetSdkVersion 28
+        versionCode 7
+        versionName "2.2"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //signingConfig signingConfigs.config
     }
     buildTypes {
         release {
@@ -33,29 +33,29 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:27.1.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    // Firebase
-    implementation 'com.google.firebase:firebase-auth:17.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    // Firebase auth
+    //implementation 'com.google.firebase:firebase-auth:17.0.0'
     // ADMob
-    implementation 'com.google.android.gms:play-services-ads-base:17.2.0'
-    implementation 'com.google.firebase:firebase-ads-lite:17.2.0'
+    implementation 'com.google.android.gms:play-services-ads-base:19.1.0'
+    implementation 'com.google.firebase:firebase-ads-lite:19.1.0'
     // Glide library
-    implementation 'com.github.bumptech.glide:glide:4.6.1'
-    implementation 'com.android.support:support-v4:27.1.1'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
     // Volley library
     implementation 'com.android.volley:volley:1.1.1'
     // Recyclerview Library
-    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
     // Lib para design
-    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.google.android.material:material:1.1.0'
     //Google Services
-    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    //implementation 'com.google.android.gms:play-services-auth:16.0.1'
     //implementation 'com.google.android.gms:play-services-identity:16.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
 
 

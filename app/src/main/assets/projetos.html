@@ -1,56 +1,67 @@
-<p><strong>Projeto Desenvolvimento do App Portal FILGS</strong></p>
-<p>Fev de 2019 – Mar de 2019</p>
-<p>Descrição do Projeto:</p>
-<p>&nbsp;</p>
-<p>Construir Aplicativo Android voltado a apresentar o conteúdo do site filgs.com.br.</p>
-<p>&nbsp;</p>
-<p>IDEIA: Conforme analises obtidas a partir do Google Analytics, foi identificado que 82% do publico que acessa o site tem origem a partir de dispositivos moveis, destes 71% Android e 27% IOS e 2% Outros. Desta forma surgiu a necessidade de replicar os dados em App nativo preservando ao máximo a performance da aplicação.</p>
-<p>&nbsp;</p>
-<p>O aplicativo faz requisições na API Rest do portal e obtém os dados das postagens e os classifica por data (data postagem), e a partir de uma listagem é possível selecionar o post desejado e visualizar o mesmo em uma nova tela, que teve o seu código HTML original adaptado para uma melhor experiência (processo realizado durante a captura das informações através da API do site filgs.com.br).</p>
-<p>&nbsp;</p>
-<p>Foram incluídas telas para apresentar outras informações do site:</p>
-<p>&nbsp;</p>
-<p>Currículo</p>
-<p>Projetos</p>
-<p>Sobre</p>
-<p>&nbsp;</p>
-<p>E adicionado Login usando o Firebase Auth (Google), para realizar a identificação do usuário e contagem de visitantes ao App Portal FILGS.</p>
-<p>&nbsp;</p><br>
-<p><strong>Projeto para criação do modelo de monitoração da Experiência de Usuário</strong></p>
-<p><strong>mar de 2018 – Jan de 2019</strong></p>
-<p>Descrição do projeto:</p>
-<p>Projeto consistiu em realizar a criação de painéis que medissem a experiência do usuário enquanto utilizam a solução.</p>
-<p>IDEIA: Percebendo que os modelos usuais para medir o desempenho (simulação), apesar de serem efetivos para o processo de monitoramento da aplicação, não conseguiam entregar uma análise real do tempo gasto por cada usuário durante o round-trip da aplicação (início da função | termino da função), para solucionar este ponto criamos gatilhos dentro das páginas a qual o cliente percorre, nestas fazemos duas marcações uma inicial e outra final, em seguida salvamos este dado em uma base relacional que posteriormente será usada para levantar os dados conforme as regras de negócio para cada serviço /produto.</p>
-<p>Com a captura das informações é realizada a análise das mesmas e definidos alarmes de “desempenho” e análises de “outlines” para entender horários de picos e origem das maiores requisições.</p>
-<p>No step seguinte utilizamos a ferramenta Zabbix para capturar as informações tratadas do Banco de Dados e assim criar alarmes para acionamento junto ao time de eventos.</p>
-<p>Como último step foram criados painéis para visualização da diretoria da empresa e tomada das decisões estratégicas com base nas métricas e dados obtidos.</p>
-<p>Projeto continuo (o mesmo é replicado para todo novo negócio ou produto desenvolvido).</p><br>
-<p><br><strong>Monitoramento Estratégico para tomada de decisão.</strong></p>
-<p><strong>nov de 2018 – dez de 2018</strong></p>
-<p>Descrição do projeto:</p>
-<p>Projeto consistiu em realizar a criação de painéis para tomada de decisões para os 5 (cinco), principais clientes da Empresa Linx-SA.</p>
-<p>Para esse foram utilizadas as ferramentas Zabbix, Prometheus e Azure Log Analytics.</p>
-<p>A partir do levantamento dos dados obtidos pelas soluções citadas, conseguimos obter as métricas de infra, e desempenho e logo em seguida foi utilizado um algoritmo para localizar “Outline” nos processos e realizar as devidas tratativas antes que os mesmos se tornassem incidentes.</p>
-<p>Como último step foram criadas duas visões uma técnica para uso dos times especializados e outra Gerencial a qual apresenta o status e andamento dos Outlines.</p>
-<p>Para o desenvolvimento das camadas de apresentação foi usada a ferramenta Grafana.</p><br>
-<p><br><strong>Medir Análise de Desempenho de Métricas de Monitoramento.</strong></p>
-<p><strong>set de 2018 – nov de 2018</strong></p>
-<p>Descrição do projeto:</p>
-<p>Projeto consistiu em realizar a captura de informações armazenadas na ferramenta de monitoramento Zabbix.<br>Modelo inicial usado neste projeto disponível em meu site <a href="http://filgs.com.br/extracao-de-dados-item-zabbix/">link.&nbsp;</a></p>
-<p>Modelo atualmente usado utiliza o serviço Azure - DataBrics, com um formato 5x mais performático e que salva as informações em uma base SQLServer Azure (PaaS).</p>
-<p>Toda a codificação deste foi realizada com a linguagem Python.</p>
-<p>Com os dados capturados aplicamos a análise de desempenho conforme cada produto, e com isso conseguimos mapear quantas amostras ficaram dentro dos quadros de “ótimo”, “bom” ou “ruim” e o horário em que houve o outline.</p>
-<p>Com essa informação é gerado um relatório para uso da equipe de incidentes realizar o mapeamento de desempenho junto aos P&amp;Ds de cada solução para aplicar as devidas melhorias quando cabíveis.</p><br>
-<p><br><strong>Aplicativo Álcool ou Gasolina</strong></p>
-<p><strong>mar de 2018</strong></p>
-<p>Descrição do projeto:</p>
-<p>Projeto consistiu em criar um aplicativo de fácil entendimento para saber qual a melhor opção para abastecer o seu carro Flex com base nos valores inseridos, seguindo a seguinte lógica:</p>
-<p>A principal diferença de preços e vantagens entre os dois combustíveis está na proporção preço X desempenho.<br>Por exemplo, um carro que faz 10 km/litro com gasolina, costuma fazer em média, 7 km/litro se abastecido com álcool.<br>Portanto, para o álcool ser mais vantajoso do que a gasolina, o preço do litro tem que custar até 70% do litro da gasolina.</p>
-<p>Aplicativo publicado na PlayStore: <a href="https://play.google.com/store/apps/details?id=com.filgueiras.rafael.xcenter">link</a></p><br>
-<p><br><strong>Aplicativo Android Namoro the End</strong></p>
-<p><strong>fev de 2018</strong></p>
-<p>Descrição do projeto:</p>
-<p>Projeto solicitado por cliente com a necessidade de criar um aplicativo para publicar frases com fim de relacionamentos.</p>
-<p>Para tal foi desenvolvido um portal usando a linguagem PHP7 com banco de dados Maria-DB, e desenvolvido App Android que utiliza base SqlLite para armazenar as frases após fazer o sincronismo com o portal do cliente.</p>
-<p>O sincronismo é realizado por API desenvolvida no portal e usando as bibliotecas Jackson e Retrofit</p>
-<p>Aplicativo publicado na PlayStore: <a href="https://play.google.com/store/apps/details?id=com.filgueiras.rafael.namorotheend&amp;hl=pt-BR">link.</a></p>
+<strong>Padronização de LOGS e APIs</strong> <br> Fev. de 2020 - Jun de 2020 <br> Descrição do Projeto
+<br> Criar um padão para APIs E LOGs de Aplicação
+<br> Neste projeto de padronização, foi discutido com os times de desenvolvimento, modelos padronizados de APIs para aplicações, seguindo boas praticas de mercado e uma estrutura unica a fim de simplificar a integração com outras soluções. <br> Foi definido
+um padrão para erros bem estruturado com rastreabilidade e melhor definição do evento (Seguindo recomendações do BACEN). <br> Os LOGS foram estruturados para além do uso de UUID, possuírem em seu conteúdo informações de geolocalização, e uma lista dos
+eventos segmentada por CDN, Barramento e Aplicação. <br> Como resultado conseguimos obter um alto grau de rastreabilidade e ainda servir informações para o time de DataScience para analises de previsibilidade.
+<br><br>
+
+<strong>Portal Colaboradores</strong> <br> Mar. de 2020 - Abril de 2020 <br> Descrição do Projeto
+<br> Construir um portal para lançamento de escala de plantões minimalista.
+<br> IDEIA: O dia a dia dos profissionais de TI principalmente os que atuam em infraestrutura/cloud possuem a necessidade de atuar em escalas de plantões devido a criticidade da operação <br> E diante deste cenário temos outros times operacionais que
+dependem de uma base de informações e escala centralizada.<br> Desta necessidade foi elaborado o projeto "Colaboradores", um simples portal em que é possível ter todos os plantões disponíveis para consulta e cadastro, e claro as mesmas informações podem
+ser exportadas para conferencia dos gestores, e analise dos times de People (RH), para eventual pagamento de sobre horas de trabalho.
+<br><br>
+
+<strong>Site Vinhas e Vinho</strong> <br> Out. de 2019 - Abril de 2020<br> Descrição do Projeto
+<br> Construir um novo site para a Empresa Casa Oliveira para venda e divulgação de sua carta de vinhos portugueses.
+<br> Projeto desenvolvido com Laravel 6, consumindo APIs do Instagram possibilitando que o marketing da empresa realizasse atualizações na pagina inicial do front-end equalizada a sua principal mídia social. <br> Integração com o Pagarme como gateway
+de pagamento. <br> CSS 100% personalizado para o projeto.
+<br><br>
+
+
+<strong>Projeto Desenvolvimento do App Portal FILGS</strong> <br> Fev de 2019 – Mar de 2019 <br> Descrição do Projeto:
+<br>Construir Aplicativo Android voltado a apresentar o conteúdo do site filgs.com.br.<br>IDEIA: Conforme analises obtidas a partir do Google Analytics, foi identificado que 82% do publico que acessa o site tem origem a partir de dispositivos
+moveis, destes 71% Android e 27% IOS e 2% Outros. Desta forma surgiu a necessidade de replicar os dados em App nativo preservando ao máximo a performance da aplicação.
+<br>O aplicativo faz requisições na API Rest do portal e obtém os dados das postagens e os classifica por data (data postagem), e a partir de uma listagem é possível selecionar o post desejado e visualizar o mesmo em uma nova tela, que teve o
+seu código HTML original adaptado para uma melhor experiência (processo realizado durante a captura das informações através da API do site filgs.com.br).
+<br>Foram incluídas telas para apresentar outras informações do site:
+<br>Currículo
+<br>Projetos
+<br>Sobre
+<br>E adicionado Login usando o Firebase Auth (Google), para realizar a identificação do usuário e contagem de visitantes ao App Portal FILGS.
+<br><br>
+
+<strong>Projeto para criação do modelo de monitoração da Experiência de Usuário</strong><br> mar de 2018 – Jan de 2019 <br> Descrição do projeto:<br> Projeto consistiu em realizar a criação de painéis que medissem a experiência do usuário enquanto utilizam
+a solução.
+<br> IDEIA: Percebendo que os modelos usuais para medir o desempenho (simulação), apesar de serem efetivos para o processo de monitoramento da aplicação, não conseguiam entregar uma análise real do tempo gasto por cada usuário durante o round-trip da
+aplicação (início da função | termino da função), para solucionar este ponto criamos gatilhos dentro das páginas a qual o cliente percorre, nestas fazemos duas marcações uma inicial e outra final, em seguida salvamos este dado em uma base relacional que
+posteriormente será usada para levantar os dados conforme as regras de negócio para cada serviço /produto.
+<br> Com a captura das informações é realizada a análise das mesmas e definidos alarmes de “desempenho” e análises de “outlines” para entender horários de picos e origem das maiores requisições.
+<br> No step seguinte utilizamos a ferramenta Zabbix para capturar as informações tratadas do Banco de Dados e assim criar alarmes para acionamento junto ao time de eventos.
+<br> Como último step foram criados painéis para visualização da diretoria da empresa e tomada das decisões estratégicas com base nas métricas e dados obtidos.
+<br> Projeto continuo (o mesmo é replicado para todo novo negócio ou produto desenvolvido).
+<br><br>
+<strong>Monitoramento Estratégico para tomada de decisão.</strong><br> nov de 2018 – dez de 2018<br> Descrição do projeto:<br> Projeto consistiu em realizar a criação de painéis para tomada de decisões para os 5 (cinco), principais clientes da Empresa
+Linx-SA.
+<br> Para esse foram utilizadas as ferramentas Zabbix, Prometheus e Azure Log Analytics.
+<br> A partir do levantamento dos dados obtidos pelas soluções citadas, conseguimos obter as métricas de infra, e desempenho e logo em seguida foi utilizado um algoritmo para localizar “Outline” nos processos e realizar as devidas tratativas antes que
+os mesmos se tornassem incidentes.
+<br> Como último step foram criadas duas visões uma técnica para uso dos times especializados e outra Gerencial a qual apresenta o status e andamento dos Outlines.
+<br> Para o desenvolvimento das camadas de apresentação foi usada a ferramenta Grafana.
+<br><br>
+<strong>Medir Análise de Desempenho de Métricas de Monitoramento.</strong><br> set de 2018 – nov de 2018<br> Descrição do projeto:<br> Projeto consistiu em realizar a captura de informações armazenadas na ferramenta de monitoramento Zabbix.<br> Modelo
+inicial usado neste projeto disponível em meu site <a href="http://filgs.com.br/extracao-de-dados-item-zabbix/">link.</a><br> Modelo atualmente usado utiliza o serviço Azure - DataBrics, com um formato 5x mais performático e que salva as informações
+em uma base SQLServer Azure (PaaS).<br> Toda a codificação deste foi realizada com a linguagem Python.<br> Com os dados capturados aplicamos a análise de desempenho conforme cada produto, e com isso conseguimos mapear quantas amostras ficaram dentro dos
+quadros de “ótimo”, “bom” ou “ruim” e o horário em que houve o outline.<br> Com essa informação é gerado um relatório para uso da equipe de incidentes realizar o mapeamento de desempenho junto aos P&amp;Ds de cada solução para aplicar as devidas melhorias
+quando cabíveis.<br><br>
+
+<strong>Aplicativo Álcool ou Gasolina</strong><br> mar de 2018<br> Descrição do projeto:<br> Projeto consistiu em criar um aplicativo de fácil entendimento para saber qual a melhor opção para abastecer o seu carro Flex com base nos valores inseridos,
+seguindo a seguinte lógica:<br> A principal diferença de preços e vantagens entre os dois combustíveis está na proporção preço X desempenho.<br> Por exemplo, um carro que faz 10 km/litro com gasolina, costuma fazer em média, 7 km/litro se abastecido com
+álcool.<br> Portanto, para o álcool ser mais vantajoso do que a gasolina, o preço do litro tem que custar até 70% do litro da gasolina.<br> Aplicativo publicado na PlayStore: <a href="https://play.google.com/store/apps/details?id=com.filgueiras.rafael.xcenter">link</a><br><br>
+
+<strong>Aplicativo Android Namoro the End</strong><br>
+
+fev de 2018<br> Descrição do projeto:<br> Projeto solicitado por cliente com a necessidade de criar um aplicativo para publicar frases com fim de relacionamentos.
+<br> Para tal foi desenvolvido um portal usando a linguagem PHP7 com banco de dados Maria-DB, e desenvolvido App Android que utiliza base SqlLite para armazenar as frases após fazer o sincronismo com o portal do cliente.
+<br> O sincronismo é realizado por API desenvolvida no portal e usando as bibliotecas Jackson e Retrofit
+<br> Aplicativo publicado na PlayStore: <a href="https://play.google.com/store/apps/details?id=com.filgueiras.rafael.namorotheend&amp;hl=pt-BR">link.</a><br><br>

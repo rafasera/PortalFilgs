@@ -1,7 +1,7 @@
 package com.rafaelfilgueiras.portalanimes.activity;
 
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebView;
@@ -11,6 +11,8 @@ import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
 import com.rafaelfilgueiras.portalanimes.R;
+
+import java.io.UTFDataFormatException;
 
 public class PostActivity extends AppCompatActivity {
 
@@ -22,10 +24,10 @@ public class PostActivity extends AppCompatActivity {
         setContentView(R.layout.activity_post);
 
         // Inicializa o ADMob
-        MobileAds.initialize(this, "ca-app-pub-7815455063890485~5750229670");
+        MobileAds.initialize(this, "ca-app-pub-7815455063890485~7621371629");
 
         mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdUnitId("ca-app-pub-7815455063890485/7640433367");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         // Apenas para garantir que a actionbar não vai aparecer.
@@ -60,7 +62,11 @@ public class PostActivity extends AppCompatActivity {
                 .replace("size-large", "size-zerif_project_photo");
 
         // setar o valor no webview
-        webView_post.loadData(html,null,"utf-8");
+        //webView_post.getSettings().setJavaScriptEnabled(true);
+        //webView_post.addJavascriptInterface(new JsObject(), "injectedObject");
+        //webView_post.loadData("", "text/html", null);
+        //webView_post.loadUrl("javascript:alert(injectedObject.toString())");
+        webView_post.loadData(Content,"text/html", "utf-8");
 
         // colocando o titulo tambem na collapsingtoolbar
         collapsingToolbarLayout.setTitle(name);

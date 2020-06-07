@@ -2,12 +2,10 @@ package com.rafaelfilgueiras.portalanimes.fragment;
 
 
 
-import android.support.v7.widget.RecyclerView;
-import android.content.Intent;
+import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +17,7 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.rafaelfilgueiras.portalanimes.R;
 import com.rafaelfilgueiras.portalanimes.adapter.RecyclerViewAdapter;
-import com.rafaelfilgueiras.portalanimes.fragment.PostsFragment;
-import com.rafaelfilgueiras.portalanimes.model.Anime;
-import com.rafaelfilgueiras.portalanimes.*;
+import com.rafaelfilgueiras.portalanimes.model.FilgsAPI;
 
 
 import org.json.JSONArray;
@@ -41,7 +37,7 @@ public class PostsFragment extends Fragment {
 
 
 
-    Anime anime = new Anime();
+    FilgsAPI filgsAPI = new FilgsAPI();
 
     public PostsFragment() {
         // Required empty public constructor
@@ -50,7 +46,7 @@ public class PostsFragment extends Fragment {
     private JsonArrayRequest request;
     private RequestQueue requestQueue;
     private RecyclerView recyclerView;
-    private List<Anime> lstAnime;
+    private List<FilgsAPI> lstFilgsAPI;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -62,7 +58,7 @@ public class PostsFragment extends Fragment {
 
 
 
-        lstAnime = new ArrayList<>();
+        lstFilgsAPI = new ArrayList<>();
 
         recyclerView = view.findViewById(R.id.recyclerview);
 
@@ -83,21 +79,21 @@ public class PostsFragment extends Fragment {
 
                     try {
                         jsonObject = response.getJSONObject(i);
-                        Anime anime = new Anime();
-                        //anime.setTitle(jsonObject.getString("title"));
-                        anime.setTitle(jsonObject.getJSONObject("title").getString("rendered"));
-                        anime.setExcerpt(jsonObject.getJSONObject("excerpt").getString("rendered")
+                        FilgsAPI filgsAPI = new FilgsAPI();
+                        //filgsAPI.setTitle(jsonObject.getString("title"));
+                        filgsAPI.setTitle(jsonObject.getJSONObject("title").getString("rendered"));
+                        filgsAPI.setExcerpt(jsonObject.getJSONObject("excerpt").getString("rendered")
                                 .replace("<p>", "")
                                 .replace("</p>", "")
                                 .replace("</br>","")
                                 .replace("<br>","")
                                 .replace("<br />","")
                         );
-                        anime.setRating(jsonObject.getString("date")
+                        filgsAPI.setRating(jsonObject.getString("date")
                                 .substring(0, 16)
                                 .replace("T", " ")
                                 .replace("-", "/"));
-                        anime.setContent(jsonObject.getJSONObject("content").getString("rendered")
+                        filgsAPI.setContent(jsonObject.getJSONObject("content").getString("rendered")
                                 .replace("\t", "")
                                 .replace("\n", "")
                                 //.replace("attachment-large size-large", "attachment-zerif_project_photo size-zerif_project_photo")
@@ -108,12 +104,12 @@ public class PostsFragment extends Fragment {
 
                         // feitas alterações para obter o objeto
                         // Alteracoes para receber dados da descricao - IMPORTANTE esse campo deve ir para nova activity
-                        //anime.setExcerpt(jsonObject.getString("version"));
-                        //anime.setStudio(jsonObject.getString("studio"));
-                        //anime.setRating(jsonObject.getString("Rating"));
-                        //anime.setNb_episode(jsonObject.getInt("episode"));
-                        //anime.setImg_url(jsonObject.getString("img"));
-                        lstAnime.add(anime);
+                        //filgsAPI.setExcerpt(jsonObject.getString("version"));
+                        //filgsAPI.setStudio(jsonObject.getString("studio"));
+                        //filgsAPI.setRating(jsonObject.getString("Rating"));
+                        //filgsAPI.setNb_episode(jsonObject.getInt("episode"));
+                        //filgsAPI.setImg_url(jsonObject.getString("img"));
+                        lstFilgsAPI.add(filgsAPI);
 
 
                     } catch (JSONException e) {
@@ -122,7 +118,7 @@ public class PostsFragment extends Fragment {
 
                 }
 
-                setupercycleview(lstAnime);
+                setupercycleview(lstFilgsAPI);
 
             }
         }, new Response.ErrorListener() {
@@ -137,9 +133,9 @@ public class PostsFragment extends Fragment {
 
     }
 
-    private void setupercycleview(List<Anime> lstAnime) {
+    private void setupercycleview(List<FilgsAPI> lstFilgsAPI) {
 
-        RecyclerViewAdapter myadapter = new RecyclerViewAdapter(getActivity(), lstAnime);
+        RecyclerViewAdapter myadapter = new RecyclerViewAdapter(getActivity(), lstFilgsAPI);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         recyclerView.setAdapter(myadapter);

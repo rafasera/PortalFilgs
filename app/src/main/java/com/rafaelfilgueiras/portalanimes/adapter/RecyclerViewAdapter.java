@@ -2,30 +2,28 @@ package com.rafaelfilgueiras.portalanimes.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.rafaelfilgueiras.portalanimes.R;
 import com.rafaelfilgueiras.portalanimes.activity.PostActivity;
-import com.rafaelfilgueiras.portalanimes.model.Anime;
+import com.rafaelfilgueiras.portalanimes.model.FilgsAPI;
 
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
     private Context mContext;
-    private List<Anime> mData;
+    private List<FilgsAPI> mData;
     RequestOptions option;
 
-    public RecyclerViewAdapter(Context mContext, List<Anime> mData) {
+    public RecyclerViewAdapter(Context mContext, List<FilgsAPI> mData) {
         this.mContext = mContext;
         this.mData = mData;
 

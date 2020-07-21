@@ -1,60 +1,45 @@
 {
   "project_info": {
-    "project_number": "713700071045",
-    "firebase_url": "https://portalfilgs.firebaseio.com",
-    "project_id": "portalfilgs",
-    "storage_bucket": "portalfilgs.appspot.com"
+    "project_number": "878376152680",
+    "firebase_url": "https://filgs-a87d9.firebaseio.com",
+    "project_id": "filgs-a87d9",
+    "storage_bucket": "filgs-a87d9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:713700071045:android:116e2987f7571cd6",
+        "mobilesdk_app_id": "1:878376152680:android:87f0bce8e13a395c18d5dd",
         "android_client_info": {
-          "package_name": "com.rafaelfilgueiras.portalanimes"
+          "package_name": "com.rafaelfilgueiras.filgs"
         }
       },
       "oauth_client": [
         {
-          "client_id": "713700071045-uernrim8fbv669qseuts9qr0stk3pit8.apps.googleusercontent.com",
+          "client_id": "878376152680-n444ot772f501i0df9t6jm6t3lj2nf2m.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.rafaelfilgueiras.portalanimes",
-            "certificate_hash": "201d7b8f17d97b43a89b3e56dd5c92ab35fc6bae"
+            "package_name": "com.rafaelfilgueiras.filgs",
+            "certificate_hash": "a02909ab51c4edbda3cbf48dcdce336d95c460ff"
           }
         },
         {
-          "client_id": "713700071045-uf3dphpbptkldfiljgupe2r8vl6bg9ih.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.rafaelfilgueiras.portalanimes",
-            "certificate_hash": "c9dc451daa166433a0323f241565b95eabc5e30c"
-          }
-        },
-        {
-          "client_id": "713700071045-5tijbq8tdengtuirfb0uqsv8vr792tkc.apps.googleusercontent.com",
+          "client_id": "878376152680-t5idbjin7ei0nmr1bg3ltvq68mrl5vq8.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCLSDyJ_lct_IESelHE8o2lYUBPDAnnsRw"
+          "current_key": "AIzaSyBnpKYRiZqa_HGll2YR8ESpaSfOt68rrTI"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "713700071045-5tijbq8tdengtuirfb0uqsv8vr792tkc.apps.googleusercontent.com",
+              "client_id": "878376152680-t5idbjin7ei0nmr1bg3ltvq68mrl5vq8.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

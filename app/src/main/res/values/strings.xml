@@ -1,23 +1,23 @@
 <resources>
-    <string name="app_name">Portal Filgs</string>
-    <string name="title_activity_principal">PrincipalActivity</string>
+    <string name="app_name">Filgs</string>
+    <string name="title_activity_principal">Tela Principal</string>
     <string name="navigation_drawer_open">Abrir barra de menus</string>
     <string name="navigation_drawer_close">Fechar barra de menus</string>
-    <string name="nav_header_title">Portal FILGS</string>
-    <string name="app_title">Portal FILGS</string>
+    <string name="nav_header_title">FILGS</string>
+    <string name="app_title">FILGS</string>
     <string name="nav_header_subtitle">filgs.com.br</string>
-    <string name="nav_header_desc">Navigation header</string>
+    <string name="nav_header_desc">Cabeçalho da barra de navegação</string>
     <string name="action_settings">Opções</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="sobreAutor">Sobre o Desenvolvedor</string>
     <string name="curriculo">Experiência Profissional</string>
     <string name="projetos">Projetos Realizados</string>
-    <string name="default_client_id">713700071045-5tijbq8tdengtuirfb0uqsv8vr792tkc.apps.googleusercontent.com</string>
+<!--    <string name="default_client_id">713700071045-5tijbq8tdengtuirfb0uqsv8vr792tkc.apps.googleusercontent.com</string>-->
     <string name="data_de_publicao">Data de Publicação:</string>
     <string name="_0_0">0.0</string>
     <string name="post_titulo">Post Titulo</string>
-    <string name="pequena_descricao">Pequena descricao</string>
+    <string name="pequena_descricao">Pequena descrição</string>
     <string name="_2019_02_22_18_00">2019/02/22 18:00</string>
 <!--    <string name="data_de_publicao">Data de Publicação:</string>-->
 

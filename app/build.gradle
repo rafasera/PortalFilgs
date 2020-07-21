@@ -2,21 +2,21 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
 android {
-//    signingConfigs {
-//        config {
-//            keyAlias 'keyrafasera'
-//            keyPassword 'stk456RFS@'
-//            storeFile file('D:/Projetos_android/KEYStrings/certificadoRafasera.jks')
-//            storePassword 'stk456RFS$'
-//        }
-//    }
+    signingConfigs {
+        config {
+            keyAlias 'keyrafasera'
+            keyPassword 'stk456RFS@'
+            storeFile file('E:/Projetos_android/KEYStrings/certificadoRafasera.jks')
+            storePassword 'stk456RFS$'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.rafaelfilgueiras.portalanimes"
+        applicationId "com.rafaelfilgueiras.filgs"
         minSdkVersion 22
         targetSdkVersion 28
-        versionCode 7
-        versionName "2.2"
+        versionCode 8
+        versionName "2.3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         //signingConfig signingConfigs.config
     }
@@ -26,12 +26,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     productFlavors {
     }
     buildToolsVersion '28.0.3'
 }
 
 dependencies {
+
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
@@ -40,6 +42,8 @@ dependencies {
     // ADMob
     implementation 'com.google.android.gms:play-services-ads-base:19.1.0'
     implementation 'com.google.firebase:firebase-ads-lite:19.1.0'
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    //implementation 'com.google.gms:google-services:4.3.3'
     // Glide library
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
